@@ -1,4 +1,4 @@
-/* style.css */
+
 
 form {
     display: flex;
@@ -34,7 +34,7 @@ form {
   }
   
   #submitButton {
-    background-color: #ccc; /* Initial disabled color */
+    background-color: #ccc; 
     color: white;
     padding: 10px 20px;
     border: none;
@@ -44,8 +44,8 @@ form {
   
  
   
-  #submitButton:enabled:valid { /* Valid and enabled button styles (optional) */
-    background-color: #4CAF50; /* Green (can be same as default enabled) */
+  #submitButton:enabled:valid { 
+    background-color: #4CAF50; 
   }
   
   .error-message {

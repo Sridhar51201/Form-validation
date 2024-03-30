@@ -7,27 +7,26 @@ function validateForm() {
     // var isValid = true;
     setinit=false;
   
-     // Name Validation
-  var name = document.getElementById("name").value.trim(); // Get trimmed value
-  if (name === "" || !/^[A-Za-z ]+$/.test(name)) { // Check for emptiness and letters/spaces
+
+  var name = document.getElementById("name").value.trim();
+  if (name === "" || !/^[A-Za-z ]+$/.test(name)) { 
     document.getElementById("name").nextElementSibling.innerHTML = "Please enter a valid name (letters and spaces only)";
     isValid = false;
 
   } else {
-    document.getElementById("name").nextElementSibling.innerHTML = ""; // Clear error message if valid
+    document.getElementById("name").nextElementSibling.innerHTML = "";
   }
 
-  // Phone Number Validation (Assuming US format)
+
   var pno = document.getElementById("pno").value.trim();
-  if (pno === "" || !/^\d{3}-\d{3}-\d{4}$/.test(pno)) { // Check for emptiness and format (XXX-XXX-XXXX)
+  if (pno === "" || !/^\d{3}-\d{3}-\d{4}$/.test(pno)) { 
     document.getElementById("pno").nextElementSibling.innerHTML = "Please enter a valid phone number (XXX-XXX-XXXX)";
     isValid = false;
   
   } else {
-    document.getElementById("pno").nextElementSibling.innerHTML = ""; // Clear error message if valid
+    document.getElementById("pno").nextElementSibling.innerHTML = "";
   }
   
-    // Email Validation
     var email = document.getElementById("email").value;
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     var emailError = document.getElementById("email").nextElementSibling;
@@ -39,7 +38,6 @@ function validateForm() {
     }
 
   
-    // Address Validation (Basic check for non-empty)
     var address = document.getElementById("address").value;
     var addressError = document.getElementById("address").nextElementSibling;
     if (address === "") {
@@ -49,7 +47,6 @@ function validateForm() {
       addressError.innerHTML = "";
     }
   
-    // Resume Validation (Check file extension and size)
     var resume = document.getElementById("resume").value;
     var resumeError = document.getElementById("resume").nextElementSibling;
     if (!validateFile(resume)) {
@@ -63,7 +60,7 @@ function validateForm() {
 
     // document.getElementById("myForm").addEventListener("input", function() {
     //     var submitButton = document.getElementById("submitButton");
-    //     // submitButton.disabled = !this.checkValidity(); // Check form validity for enabling
+    //     // submitButton.disabled = !this.checkValidity();
     //     submitButton.style.backgroundColor =this.checkValidity() ? "#4CAF50" : "red";
     //   });
 
@@ -78,7 +75,7 @@ function validateForm() {
 
     // document.getElementById("myForm").addEventListener("input", function() {
     //     var submitButton = document.getElementById("submitButton");
-    //     // submitButton.disabled = !this.checkValidity(); // Check form validity for enabling
+    //     // submitButton.disabled = !this.checkValidity();
     //     submitButton.style.backgroundColor =validateForm() ? "#4CAF50" : "red";
     //   });
     var resumeError = document.getElementById("resume").nextElementSibling;
@@ -87,7 +84,6 @@ function validateForm() {
     submitButton.style.backgroundColor = "#4CAF50" ;
 
 
-    // Allowed extensions check
     var allowedExtensions = [".pdf", ".docx"];
     var extension = f.substring(f.lastIndexOf("."));
     if (!allowedExtensions.includes(extension)) {
